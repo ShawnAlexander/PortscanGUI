@@ -2,5 +2,4 @@ from tkinter import ttk
 
 class DetailedFrame(ttk.Frame):
     def __init__(self, master):
-        super().__init__(master)
-
+        ttk.Frame.__init__(self, master=master)

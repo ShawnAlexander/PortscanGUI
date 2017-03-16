@@ -1,4 +1,6 @@
 from view.app import App
+from tkinter import Tk
 
-a = App()
-a.mainloop()
+root = Tk()
+a = App(master=root)
+root.mainloop()
