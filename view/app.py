@@ -10,6 +10,7 @@ class App(ttk.Frame):
         ttk.Frame.__init__(self, master)
         self.master.title('GUI Port Scanner - Shawn Johnson')
         self.menuBar = Menu(self.master)
+
         self.fileMenu = Menu(self.menuBar, tearoff=0)
         self.fileMenu.add_command(label='New', command=None)
         self.fileMenu.add_command(label='Save', command=None)
@@ -17,6 +18,11 @@ class App(ttk.Frame):
         self.fileMenu.add_separator()
         self.fileMenu.add_command(label='Exit', command=self.master.quit)
         self.menuBar.add_cascade(label='File', menu=self.fileMenu)
+
+        self.helpMenu = self.menuBar.add_command(label='Help', command=None)
+        self.aboutMenu = self.menuBar.add_command(label='About', command=None)
+
+
         self.master.config(menu=self.menuBar)
 
         self.grid(column=0, row=0)

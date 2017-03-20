@@ -1,7 +1,7 @@
 from tkinter import ttk
 from tkinter import StringVar
 
-TESTDATA = [{'IP Version': '4', 'IP Address': '192.168.1.1', 'Port Range': '0-65000', 'Timeout': '5'}, {'IP Version': '4', 'IP Address': '192.168.0.1', 'Port Range': '22-80', 'Timeout': '5'}]
+TESTDATA = [{'IP Version': '4', '#0': '192.168.1.1', 'Port Range': '0-65000', 'Timeout': '5'}, {'IP Version': '4', '#0': '192.168.0.1', 'Port Range': '22-80', 'Timeout': '5'}]
 
 class ListView(ttk.Frame):
     COLUMNS = ('ver', 'port', 'time')
@@ -20,9 +20,9 @@ class ListView(ttk.Frame):
         for d in listOfDictionary:
             self.tBox.insert('', index='end', values=[value for key, value in d.items()])
     def doColumns(self):
-        self.tBox.column('#0', minwidth=15, width=50)
+        self.tBox.column('#0', minwidth=15, width=30)
         for col in ListView.COLUMNS:
-            self.tBox.column(col, minwidth=20, width=50)
+            self.tBox.column(col, minwidth=20, width=30)
 
     def doHeadings(self):
         self.tBox.heading('#0', text='IP Address')
